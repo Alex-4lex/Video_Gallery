@@ -1,0 +1,287 @@
+:root {
+  --primary: linear-gradient(to bottom right, #0a0057, #3f00ee);
+  --secondary: gold;
+  --text: #fff;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif; 
+}
+
+body {
+  min-height: 100vh;
+  background-image: var(--primary) ; 
+  font-family: sans-serif;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  /* to make space bettwen navbar and main video 👇*/
+/*  padding-top: 20%; */
+}
+
+.container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr;
+  gap: 3vh 1vw;
+  padding: 1vw .5vw;
+  text-transform: capitalize;
+  /*margin-top: 7%; /* i was added that */
+}
+
+.main-video {
+  width: 100%;
+  margin-top: 3.5rem;
+}
+.video-playlist {
+  width: 100%;
+  height: 65vh;
+}
+
+.main-video .title {
+  margin-top: 1vh; /* it was 1 vh */
+}
+
+.video-playlist .title {
+  padding-left: 1vw; /* it was 1vh */
+}
+
+.video-playlist>p {
+  padding: 2vh;
+  color: var(--secondary);
+}
+
+.video-playlist .videos {
+  height: 70%;
+  overflow-y: auto;
+  direction: rtl; /* لعرض النص باللغة العربية من اليمين لليسار*/
+}
+
+.video-playlist .videos::-webkit-scrollbar {
+  width: .4rem;
+  border-radius: .4rem;
+  background-color: #0005;
+}
+
+.video-playlist .videos::-webkit-scrollbar-thumb {
+  border-radius: .4rem;
+  background-color: #fff;
+}
+
+.video-playlist .videos .video {
+  /* position: relative; */
+  width: 40vw;
+  height: 9vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 1vw;
+  margin-top: .1vh;
+  cursor: pointer;
+
+  border-radius: .5rem;
+  flex-direction: row-reverse; /* ضبط اتجاه العرض حسب لغة الموقع */
+}
+
+.video-playlist .videos .video:hover {
+  background-color: #0003;
+}
+
+.video-playlist .videos .video.active {
+  background-color: #0003;
+  color: var(--secondary);
+}
+
+.main-video video {
+  width: 100%;
+  border-radius: .5rem;
+}
+
+.video img {
+  /* position: absolute; */
+  /* left: 1rem; */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  filter: invert(100%);
+}
+
+.video-playlist .videos .video.active img {
+  filter: invert(100%) sepia(100%) saturate(2000%) hue-rotate(360deg);
+}
+
+.video p {
+  margin-left: 2vw;
+}
+
+.video h3 {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  font: 100 1rem sans-serif;
+  padding: 0 1vh;
+}
+
+@media screen and (max-width: 990px) { /* it was 990px */
+  :root {
+    font-size: 12px;
+  }
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .video-playlist .videos .video {
+    /* position: relative; */
+    width: 90vw;
+    height: 9vh;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    padding: 0 1vw;
+    /* margin-top: .1vh; */
+    margin: 0 auto;
+    cursor: pointer;
+  
+    border-radius: .5rem;
+  }
+  .video-playlist {
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+/* we added that to delite a spice between first up body and firstup video */
+@media screen and (max-width: 990px) {
+  body {
+  min-height: 100vh;
+  background-image: var(--primary);
+  display: flex;
+  align-items: flex-start;
+ }
+}
+
+/* to make a bar */
+
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+  color: #fff;
+  font-size:1rem ; /*it was 1rem */
+}
+a:hover{
+  color: orange;
+}
+
+/* HEADER */
+header{
+  position: relative;
+  padding: 0 2rem; /* it was 2rem */
+}
+.navbar{
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  
+}
+.navbar .links li {
+  float: left; /* تفعيل Float */
+  width: auto; /* الحفاظ على عرض العناصر الأصلي */
+  margin: 0 1rem; /* مسافة متساوية بين العناصر */
+}
+
+@media screen and (max-width: 340px ){  /* لجعل العناصر في الشريط العلوي متساوسسن في البعد عن بعضهم عندما تصغر الشاشة بأقل من حجم الموبايل */
+
+  .navbar .links li {
+    margin: 0 0.5rem;
+  }
+}
+
+.navbar .logo a{
+  font-size: 1.5rem;
+  font-weit:bold;
+}
+.navbar .link{
+  display: flex;
+  gap: 2rem;
+}
+
+/*.logo img{
+  width: 3rem
+}*/
+
+/*.logo img {
+  vertical-align: middle;
+}
+*/
+
+.logo img {
+  /* أو أي قيمة تناسب حجم العناصر الأخرى */
+  max-width: 6rem; /* أو أي قيمة تناسب حجم العناصر الأخرى */
+padding-top: 35%;
+}
+
+.action_btn{   /* لزر اليوتيوب */
+  background-color: red;
+  color: #fff;
+  padding: 0,5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+}
+.action_btn:hover {
+  scale: 1.05;
+  color: #fff;
+}
+
+.action_btn:active{
+  
+}
+@media screen and (max-width: 990px) {
+  .logo>img {
+    max-width: 10rem;
+    max-height: 3rem;
+    padding-top: 0;
+    
+  }
+}
+
+/* footer */
+
+footer {
+  position: fixed; /* وضع التذييل في أسفل الصفحة */
+  bottom: 0; /* تعيين الموضع السفلي إلى 0 */
+  width: 100%; /* جعل التذييل يمتد بعرض الصفحة بالكامل */
+  text-align: center; /* مركز النص داخل التذييل */
+  padding: 10px; /* إضافة بعض الحشو للمسافة البصرية */
+  background-color: #f2f2f2; /* تعيين لون الخلفية للتباين */
+  color: #333; /* تعيين لون النص */
+  font-size: 0.8rem; /* ضبط حجم الخط للقراءة */
+}
+
