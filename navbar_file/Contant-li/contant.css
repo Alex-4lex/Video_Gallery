@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+background-image: url("../../images/Background-image-blue.jpg");
+background-size: auto ; /* Cover the entire viewport with the background image */
+}
+
+/* ... (CSS عام) */
+
+/* محتوى div */
+.content {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* أيقونة */
+.icon {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+/* عنوان البريد الإلكتروني */
+h2 {
+  font-size: 20px;
+  margin: 0;
+  max-width: 100%;
+  /* منع تجاوز عرض div */
+}
+
+/* استعلامات الوسائط (Media Queries) */
+@media (max-width: 768px) {
+  .content {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+}
