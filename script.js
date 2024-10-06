@@ -14,7 +14,7 @@ let data = [
     {
         'id': 'a1',
         'title': 'جيش بشار الأسد يقومون بضرب وتعذيب مدني اعزل، بتاريخ: 11/7/2012 ',
-        'name': 'manipulate text background.mp4',
+        'name': 'video_1.mp4',
         'duration': '0:22',
     },
     {
